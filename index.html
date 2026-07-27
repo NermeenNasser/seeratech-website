@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SeeraTech | Get Noticed</title>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- FontAwesome Icons -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Google Fonts (Tajawal) -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
+            rel="stylesheet">
+
+        <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* ========== LIGHT MODE OVERRIDES ========== */
+        html.light-mode body {
+            background-color: #f1f5f9 !important;
+            color: #1e293b !important;
+        }
+        html.light-mode .bg-slate-900 {
+            background-color: #ffffff !important;
+        }
+        html.light-mode .bg-slate-950 {
+            background-color: #f8fafc !important;
+        }
+        html.light-mode .bg-slate-800\/40 {
+            background-color: #e2e8f0 !important;
+            border-color: #cbd5e1 !important;
+        }
+        html.light-mode .bg-slate-900\/80 {
+            background-color: rgba(255,255,255,0.85) !important;
+            border-bottom-color: #e2e8f0 !important;
+        }
+        html.light-mode .bg-slate-800 {
+            background-color: #e2e8f0 !important;
+            border-color: #cbd5e1 !important;
+        }
+        html.light-mode .bg-slate-800\/80 {
+            background-color: #e2e8f0 !important;
+            border-color: #cbd5e1 !important;
+        }
+        html.light-mode .border-slate-800 {
+            border-color: #e2e8f0 !important;
+        }
+        html.light-mode .border-slate-700 {
+            border-color: #cbd5e1 !important;
+        }
+        html.light-mode .border-slate-700\/50 {
+            border-color: #cbd5e1 !important;
+        }
+        html.light-mode .text-slate-100 {
+            color: #1e293b !important;
+        }
+        html.light-mode .text-slate-300 {
+            color: #475569 !important;
+        }
+        html.light-mode .text-slate-400 {
+            color: #64748b !important;
+        }
+        html.light-mode .text-slate-500 {
+            color: #94a3b8 !important;
+        }
+        html.light-mode .text-slate-600 {
+            color: #94a3b8 !important;
+        }
+        html.light-mode .text-white {
+            color: #0f172a !important;
+        }
+        html.light-mode .text-indigo-300 {
+            color: #6366f1 !important;
+        }
+        html.light-mode .indigo-400 {
+            color: #6366f1 !important;
+        }
+        html.light-mode .bg-emerald-950\/20 {
+            background-color: #ecfdf5 !important;
+            border-color: #6ee7b7 !important;
+        }
+        html.light-mode .bg-red-950\/20 {
+            background-color: #fef2f2 !important;
+            border-color: #fca5a5 !important;
+        }
+        html.light-mode .bg-slate-900.border-slate-800 {
+            background-color: #ffffff !important;
+        }
+        html.light-mode .bg-indigo-500\/10 {
+            background-color: #eef2ff !important;
+        }
+        html.light-mode .text-indigo-400 {
+            color: #6366f1 !important;
+        }
+        html.light-mode .hover\:text-indigo-400:hover {
+            color: #4f46e5 !important;
+        }
+        html.light-mode .bg-indigo-600 {
+            background-color: #6366f1 !important;
+        }
+        html.light-mode .bg-indigo-600:hover {
+            background-color: #4f46e5 !important;
+        }
+        html.light-mode .shadow-indigo-600\/30 {
+            box-shadow: 0 4px 6px -1px rgba(99,102,241,0.2) !important;
+        }
+        html.light-mode .bg-indigo-600\/10 {
+            background-color: #eef2ff !important;
+        }
+        html.light-mode .border-indigo-500\/20 {
+            border-color: #c7d2fe !important;
+        }
+        html.light-mode .border-indigo-500\/40 {
+            border-color: #a5b4fc !important;
+        }
+        html.light-mode .bg-indigo-500\/10 {
+            background-color: #eef2ff !important;
+            border-color: #c7d2fe !important;
+        }
+        html.light-mode .bg-slate-900.border-indigo-500\/40 {
+            background-color: #ffffff !important;
+        }
+        html.light-mode .shadow-2xl.shadow-indigo-500\/10 {
+            box-shadow: 0 4px 6px -1px rgba(99,102,241,0.15) !important;
+        }
+        html.light-mode .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f8fafc 100%) !important;
+        }
+        html.light-mode .border-t.border-slate-800 {
+            border-top-color: #e2e8f0 !important;
+        }
+        /* Toggle buttons in light mode */
+        html.light-mode #themeToggle,
+        html.light-mode #langToggle {
+            background-color: #e2e8f0 !important;
+            border-color: #cbd5e1 !important;
+            color: #475569 !important;
+        }
+        html.light-mode #themeToggle:hover,
+        html.light-mode #langToggle:hover {
+            background-color: #cbd5e1 !important;
+        }
+        html.light-mode .fa-moon {
+            color: #475569 !important;
+        }
+        /* Transitions */
+        html, body, nav, section, footer, div, span, p, h1, h2, h3, h4, a, button {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+    </style>
+        <style>
+        /* Language switch animation */
+        [data-i18n] {
+            transition: opacity 0.2s ease;
+        }
+        [data-i18n].switching {
+            opacity: 0;
+        }
+    </style>
+    </head>
+    <body
+        class="bg-slate-900 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+        <!-- Navbar -->
+        <nav
+            class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex items-center gap-3">
+                        <span
+                            class="text-2xl font-extrabold tracking-tight text-white">Seera<span
+                                class="text-indigo-400">Tech</span></span>
+                        <span
+                            class="hidden sm:inline-block text-xs bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2.5 py-1 rounded-full font-medium">Get
+                            Noticed</span>
+                    </div>
+                    <div
+                        class="hidden md:flex items-center space-x-8 space-x-reverse font-medium text-slate-300">
+                        <a href="#about"
+                            class="hover:text-indigo-400 transition-colors"
+                            data-i18n="nav.about">عن SeeraTech</a>
+                        <a href="#services"
+                            class="hover:text-indigo-400 transition-colors"
+                            data-i18n="nav.services">خدماتنا</a>
+                        <a href="#why-us"
+                            class="hover:text-indigo-400 transition-colors"
+                            data-i18n="nav.whyUs">مميزاتنا</a>
+                        <a href="#pricing"
+                            class="hover:text-indigo-400 transition-colors"
+                            data-i18n="nav.pricing">الأسعار والعروض</a>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <!-- Theme Toggle (Dark/Light) -->
+                        <button id="themeToggle" onclick="toggleTheme()"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white transition-all"
+                            title="تبديل الإضاءة">
+                            <i class="fas fa-moon text-lg"></i>
+                        </button>
+                        <!-- Language Toggle (AR/EN) -->
+                        <button id="langToggle" onclick="toggleLanguage()"
+                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white font-bold text-sm transition-all"
+                            title="تبديل اللغة">
+                            EN
+                        </button>
+                        <a href="https://wa.me/201285699344" target="_blank"
+                            class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 px-5 rounded-xl shadow-lg shadow-indigo-600/30 transition-all duration-200 flex items-center gap-2">
+                            <i
+                                class="fab font-semibold fa-whatsapp text-lg"></i>
+                            <span data-i18n="nav.contact">تواصل معنا</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="relative pt-36 pb-20 gradient-bg overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-indigo-300 text-sm font-medium">
+                        <i class="fas fa-sparkles text-amber-400"></i>
+                        <span data-i18n="hero.badge">حلقة الوصل بين دراستك وسوق
+                            العمل</span>
+                    </div>
+                    <h1
+                        class="text-4xl sm:text-6xl font-black text-white leading-tight">
+                        <span data-i18n="hero.title1">طريقك للوظيفة يبتدئ بـ
+                        </span><span class="gradient-text"
+                            data-i18n="hero.title2">CV
+                            متوافق مع الـ ATS</span>
+                    </h1>
+                    <p
+                        class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed"
+                        data-i18n="hero.desc">
+                        نساعد الطلاب والخريجين والمهنيين في زيادة فرص قبولهم
+                        وسهولة وصولهم للمقابلات الشخصية بملفات احترافية معتمدة.
+                    </p>
+                    <div
+                        class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#pricing"
+                            class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white text-lg font-bold py-3.5 px-8 rounded-xl shadow-lg shadow-indigo-600/30 transition-all"
+                            data-i18n="hero.btn1">
+                            احصل على الـ CV الخاص بك
+                        </a>
+                        <a href="https://www.facebook.com/share/1DGfDPq1AE/"
+                            target="_blank"
+                            class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-lg font-semibold py-3.5 px-8 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="fab fa-facebook text-blue-400"></i>
+                            <span data-i18n="hero.btn2">صفحتنا على فيسبوك</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ATS Explanation / Comparison Section -->
+        <section id="about"
+            class="py-20 bg-slate-900 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl font-extrabold text-white mb-4"
+                        data-i18n="about.title">ما هو
+                        نظام الـ ATS ولماذا يرفض أغلب السير الذاتية؟</h2>
+                    <p class="text-slate-400" data-i18n="about.desc">نظام
+                        Applicant Tracking System هو
+                        البرنامج الذي تستخدمه الشركات لفرز السير الذاتية آلياً
+                        قبل وصولها لمسؤولي التوظيف.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Bad CV -->
+                    <div
+                        class="bg-red-950/20 border border-red-500/30 rounded-2xl p-8 relative">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 text-red-400 border border-red-500/20 rounded-full text-sm font-bold mb-6">
+                            <i class="fas fa-times-circle"></i> <span
+                                data-i18n="about.bad">CV يرفضه النظام
+                                آلياً</span>
+                        </div>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-xmark text-red-400 mt-1"></i>
+                                <span data-i18n="about.bad1">تصاميم مليئة بـ
+                                    الألوان المعقدة والأشرطة
+                                    والجداول.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-xmark text-red-400 mt-1"></i>
+                                <span data-i18n="about.bad2">تنسيقات عشوائية
+                                    تعرقل القراءة الآلية
+                                    للبرنامج.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-xmark text-red-400 mt-1"></i>
+                                <span data-i18n="about.bad3">عدم وجود الكلمات
+                                    المفتاحية (Keywords)
+                                    المناسبة للتخصص.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Good CV (SeeraTech) -->
+                    <div
+                        class="bg-emerald-950/20 border border-emerald-500/30 rounded-2xl p-8 relative">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-sm font-bold mb-6">
+                            <i class="fas fa-check-circle"></i> <span
+                                data-i18n="about.good">CV مجهز بواسطة
+                                SeeraTech</span>
+                        </div>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <i
+                                    class="fas fa-check text-emerald-400 mt-1"></i>
+                                <span data-i18n="about.good1">تنسيق معياري بسيط
+                                    ومنظم متوافق 100% مع
+                                    خوارزميات الـ ATS.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i
+                                    class="fas fa-check text-emerald-400 mt-1"></i>
+                                <span data-i18n="about.good2">صياغة دقيقة ومحتوى
+                                    قوي يبرز مهاراتك
+                                    وإنجازاتك بوضوح.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i
+                                    class="fas fa-check text-emerald-400 mt-1"></i>
+                                <span data-i18n="about.good3">سهولة استخراج
+                                    البيانات بواسطة الأنظمة
+                                    ومسؤولي التوظيف.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl font-extrabold text-white mb-4"
+                        data-i18n="services.title">الخدمات
+                        الرئيسية</h2>
+                    <p class="text-slate-400" data-i18n="services.desc">نقدم لك
+                        حزمة متكاملة لتجهيز ملفاتك
+                        المهنية بأعلى معايير الجودة.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div
+                        class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-indigo-500/50 transition-all hover:-translate-y-1">
+                        <div
+                            class="w-14 h-14 bg-indigo-600/10 rounded-xl border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-2xl mb-6">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3"
+                            data-i18n="services.s1">كتابة
+                            وتنسيق الـ CV</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"
+                            data-i18n="services.s1d">
+                            إعداد سير ذاتية معيارية واحترافية متوافقة بالكامل مع
+                            أنظمة الـ ATS باللغتين العربية والإنجليزية.
+                        </p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div
+                        class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-indigo-500/50 transition-all hover:-translate-y-1">
+                        <div
+                            class="w-14 h-14 bg-indigo-600/10 rounded-xl border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-2xl mb-6">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3"
+                            data-i18n="services.s2">تحسين حساب
+                            LinkedIn</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"
+                            data-i18n="services.s2d">
+                            بناء وتطوير حسابك الشخصي والـ Headline والـ About
+                            للظهور في أولويات بحث مسؤولي التوظيف.
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div
+                        class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-indigo-500/50 transition-all hover:-translate-y-1">
+                        <div
+                            class="w-14 h-14 bg-indigo-600/10 rounded-xl border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-2xl mb-6">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3"
+                            data-i18n="services.s3">الخطابات
+                            التوضيحية (Cover Letters)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed"
+                            data-i18n="services.s3d">
+                            كتابة رسائل تغطية مخصصة وموجهة للوظائف التي تستهدفها
+                            لزيادة اهتمام الـ HR بطلبك.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us / Value Proposition -->
+        <section id="why-us"
+            class="py-20 bg-slate-900 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-3 gap-8 text-center">
+                    <div
+                        class="p-6 bg-slate-800/40 rounded-2xl border border-slate-700/50">
+                        <i class="fas fa-bolt text-amber-400 text-3xl mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2"
+                            data-i18n="why.speed">سرعة
+                            التنفيذ</h4>
+                        <p class="text-slate-400 text-sm"
+                            data-i18n="why.speedd">تسليم الخدمة بشكل كامل
+                            خلال 24 إلى 48 ساعة فقط.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-slate-800/40 rounded-2xl border border-slate-700/50">
+                        <i
+                            class="fas fa-shield-halved text-indigo-400 text-3xl mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2"
+                            data-i18n="why.accuracy">دقة
+                            الفحص</h4>
+                        <p class="text-slate-400 text-sm"
+                            data-i18n="why.accuracyd">ضمان القراءة الآلية
+                            وسهولة استخراج البيانات من الملف.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-slate-800/40 rounded-2xl border border-slate-700/50">
+                        <i
+                            class="fas fa-wallet text-emerald-400 text-3xl mb-4"></i>
+                        <h4 class="text-lg font-bold text-white mb-2"
+                            data-i18n="why.payment">مرونة
+                            الدفع</h4>
+                        <p class="text-slate-400 text-sm"
+                            data-i18n="why.paymentd">وسائل دفع محلية سهلة
+                            وسريعة عبر (InstaPay والمحافظ الإلكترونية).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="max-w-lg mx-auto bg-slate-900 border border-indigo-500/40 rounded-3xl p-8 relative shadow-2xl shadow-indigo-500/10">
+                    <div
+                        class="absolute -top-4 right-1/2 translate-x-1/2 bg-gradient-to-r from-indigo-500 to-sky-500 text-white font-bold text-xs px-4 py-1.5 rounded-full"
+                        data-i18n="pricing.badge">
+                        العرض الأكثر طلباً
+                    </div>
+
+                    <div class="text-center my-6">
+                        <h3 class="text-2xl font-black text-white mb-2"
+                            data-i18n="pricing.title">خدمة الـ
+                            CV والتطوير المهني</h3>
+                        <div
+                            class="flex items-baseline justify-center gap-1 my-4">
+                            <span
+                                class="text-5xl font-black text-white">150</span>
+                            <span class="text-slate-400 font-bold"
+                                data-i18n="pricing.currency">جنيه
+                                مصري</span>
+                        </div>
+                        <p
+                            class="text-indigo-400 font-bold text-sm bg-indigo-500/10 py-2 rounded-xl border border-indigo-500/20"
+                            data-i18n="pricing.offer">
+                            🎉 عرض الصحاب متوفر لأي عدد!
+                        </p>
+                    </div>
+
+                    <ul
+                        class="space-y-3 text-slate-300 text-sm mb-8 border-t border-slate-800 pt-6">
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-check text-indigo-400"></i> <span
+                                data-i18n="pricing.item1">CV
+                                متوافق 100% مع الـ ATS</span></li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-check text-indigo-400"></i>
+                            <span data-i18n="pricing.item2">التسليم خلال 24-48
+                                ساعة</span></li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-check text-indigo-400"></i> <span
+                                data-i18n="pricing.item3">صياغة
+                                باللغتين العربية أو الإنجليزية</span></li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-check text-indigo-400"></i> <span
+                                data-i18n="pricing.item4">الدفع
+                                عن طريق InstaPay أو Vodafone Cash</span></li>
+                    </ul>
+
+                    <a
+                        href="https://wa.me/201285699344?text=السلام%20عليكم،%20عايز%20أطلب%20خدمة%20الـ%20CV%20من%20SeeraTech"
+                        target="_blank"
+                        class="block text-center w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all"
+                        data-i18n="pricing.btn">
+                        اطلب الخدمة الآن عبر واتساب
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 border-t border-slate-800 py-12">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+                <div class="text-xl font-bold text-white">Seera<span
+                        class="text-indigo-400">Tech</span></div>
+                <p class="text-slate-500 text-sm">SeeraTech | Get Noticed</p>
+                <div
+                    class="flex justify-center gap-6 text-slate-400 text-xl pt-2">
+                    <a href="https://www.facebook.com/share/1DGfDPq1AE/"
+                        target="_blank"
+                        class="hover:text-indigo-400 transition-colors"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/seera_tech1/"
+                        target="_blank"
+                        class="hover:text-indigo-400 transition-colors"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/201285699344" target="_blank"
+                        class="hover:text-indigo-400 transition-colors"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="text-xs text-slate-600 pt-4"
+                    data-i18n="footer.rights">جميع الحقوق محفوظة &copy;
+                    SeeraTech 2026</p>
+            </div>
+        </footer>
+
+        <script>
+        // ========== TRANSLATIONS ==========
+        const translations = {
+            ar: {
+                'nav.about': 'عن SeeraTech',
+                'nav.services': 'خدماتنا',
+                'nav.whyUs': 'مميزاتنا',
+                'nav.pricing': 'الأسعار والعروض',
+                'nav.contact': 'تواصل معنا',
+                'hero.badge': 'حلقة الوصل بين دراستك وسوق العمل',
+                'hero.title1': 'طريقك للوظيفة يبتدئ بـ ',
+                'hero.title2': 'CV متوافق مع الـ ATS',
+                'hero.desc': 'نساعد الطلاب والخريجين والمهنيين في زيادة فرص قبولهم وسهولة وصولهم للمقابلات الشخصية بملفات احترافية معتمدة.',
+                'hero.btn1': 'احصل على الـ CV الخاص بك',
+                'hero.btn2': 'صفحتنا على فيسبوك',
+                'about.title': 'ما هو نظام الـ ATS ولماذا يرفض أغلب السير الذاتية؟',
+                'about.desc': 'نظام Applicant Tracking System هو البرنامج الذي تستخدمه الشركات لفرز السير الذاتية آلياً قبل وصولها لمسؤولي التوظيف.',
+                'about.bad': 'CV يرفضه النظام آلياً',
+                'about.bad1': 'تصاميم مليئة بـ الألوان المعقدة والأشرطة والجداول.',
+                'about.bad2': 'تنسيقات عشوائية تعرقل القراءة الآلية للبرنامج.',
+                'about.bad3': 'عدم وجود الكلمات المفتاحية (Keywords) المناسبة للتخصص.',
+                'about.good': 'CV مجهز بواسطة SeeraTech',
+                'about.good1': 'تنسيق معياري بسيط ومنظم متوافق 100% مع خوارزميات الـ ATS.',
+                'about.good2': 'صياغة دقيقة ومحتوى قوي يبرز مهاراتك وإنجازاتك بوضوح.',
+                'about.good3': 'سهولة استخراج البيانات بواسطة الأنظمة ومسؤولي التوظيف.',
+                'services.title': 'الخدمات الرئيسية',
+                'services.desc': 'نقدم لك حزمة متكاملة لتجهيز ملفاتك المهنية بأعلى معايير الجودة.',
+                'services.s1': 'كتابة وتنسيق الـ CV',
+                'services.s1d': 'إعداد سير ذاتية معيارية واحترافية متوافقة بالكامل مع أنظمة الـ ATS باللغتين العربية والإنجليزية.',
+                'services.s2': 'تحسين حساب LinkedIn',
+                'services.s2d': 'بناء وتطوير حسابك الشخصي والـ Headline والـ About للظهور في أولويات بحث مسؤولي التوظيف.',
+                'services.s3': 'الخطابات التوضيحية (Cover Letters)',
+                'services.s3d': 'كتابة رسائل تغطية مخصصة وموجهة للوظائف التي تستهدفها لزيادة اهتمام الـ HR بطلبك.',
+                'why.speed': 'سرعة التنفيذ',
+                'why.speedd': 'تسليم الخدمة بشكل كامل خلال 24 إلى 48 ساعة فقط.',
+                'why.accuracy': 'دقة الفحص',
+                'why.accuracyd': 'ضمان القراءة الآلية وسهولة استخراج البيانات من الملف.',
+                'why.payment': 'مرونة الدفع',
+                'why.paymentd': 'وسائل دفع محلية سهلة وسريعة عبر (InstaPay والمحافظ الإلكترونية).',
+                'pricing.badge': 'العرض الأكثر طلباً',
+                'pricing.title': 'خدمة الـ CV والتطوير المهني',
+                'pricing.currency': 'جنيه مصري',
+                'pricing.offer': '🎉 عرض الصحاب متوفر لأي عدد!',
+                'pricing.item1': 'CV متوافق 100% مع الـ ATS',
+                'pricing.item2': 'التسليم خلال 24-48 ساعة',
+                'pricing.item3': 'صياغة باللغتين العربية أو الإنجليزية',
+                'pricing.item4': 'الدفع عن طريق InstaPay أو Vodafone Cash',
+                'pricing.btn': 'اطلب الخدمة الآن عبر واتساب',
+                'footer.rights': 'جميع الحقوق محفوظة © SeeraTech 2026',
+                'theme.title': 'تبديل الإضاءة',
+                'lang.title': 'تبديل اللغة'
+            },
+            en: {
+                'nav.about': 'About SeeraTech',
+                'nav.services': 'Our Services',
+                'nav.whyUs': 'Why Us',
+                'nav.pricing': 'Pricing & Offers',
+                'nav.contact': 'Contact Us',
+                'hero.badge': 'The bridge between your study and the job market',
+                'hero.title1': 'Your path to a job starts with an ',
+                'hero.title2': 'ATS-Friendly CV',
+                'hero.desc': 'We help students, graduates, and professionals increase their acceptance rates and interview opportunities with professional, certified documents.',
+                'hero.btn1': 'Get Your CV Now',
+                'hero.btn2': 'Our Facebook Page',
+                'about.title': 'What is the ATS System and Why Does It Reject Most Resumes?',
+                'about.desc': 'The Applicant Tracking System is the software companies use to automatically filter resumes before they reach HR managers.',
+                'about.bad': 'CV automatically rejected by the system',
+                'about.bad1': 'Designs full of complex colors, bars, and tables.',
+                'about.bad2': 'Random formatting that hinders automated reading.',
+                'about.bad3': 'Lack of relevant keywords for the specialization.',
+                'about.good': 'CV prepared by SeeraTech',
+                'about.good1': 'Simple, organized standard formatting 100% compatible with ATS algorithms.',
+                'about.good2': 'Precise wording and strong content highlighting your skills and achievements.',
+                'about.good3': 'Easy data extraction by systems and hiring managers.',
+                'services.title': 'Main Services',
+                'services.desc': 'We offer you an integrated package to prepare your professional documents with the highest quality standards.',
+                'services.s1': 'CV Writing & Formatting',
+                'services.s1d': 'Preparing standard and professional resumes fully compatible with ATS systems in both Arabic and English.',
+                'services.s2': 'LinkedIn Profile Optimization',
+                'services.s2d': 'Building and developing your personal account, Headline, and About section to appear in recruiters\' top searches.',
+                'services.s3': 'Cover Letters',
+                'services.s3d': 'Writing customized cover letters tailored to your target jobs to increase HR interest in your application.',
+                'why.speed': 'Fast Execution',
+                'why.speedd': 'Full service delivery within 24 to 48 hours only.',
+                'why.accuracy': 'Accuracy Check',
+                'why.accuracyd': 'Ensuring automated readability and easy data extraction from the file.',
+                'why.payment': 'Flexible Payment',
+                'why.paymentd': 'Easy and fast local payment methods via InstaPay and e-wallets.',
+                'pricing.badge': 'Most Requested Offer',
+                'pricing.title': 'CV & Professional Development Service',
+                'pricing.currency': 'EGP',
+                'pricing.offer': '🎉 Friend offer available for any number!',
+                'pricing.item1': '100% ATS-Compatible CV',
+                'pricing.item2': 'Delivery within 24-48 hours',
+                'pricing.item3': 'Wording in Arabic or English',
+                'pricing.item4': 'Payment via InstaPay or Vodafone Cash',
+                'pricing.btn': 'Order Now via WhatsApp',
+                'footer.rights': 'All Rights Reserved © SeeraTech 2026',
+                'theme.title': 'Toggle theme',
+                'lang.title': 'Toggle language'
+            }
+        };
+
+        let currentLang = localStorage.getItem('seeraLang') || 'ar';
+        let currentTheme = localStorage.getItem('seeraTheme') || 'dark';
+
+        // ========== THEME TOGGLE ==========
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.querySelector('#themeToggle i');
+            if (html.classList.contains('light-mode')) {
+                html.classList.remove('light-mode');
+                currentTheme = 'dark';
+                if (icon) {
+                    icon.className = 'fas fa-moon text-lg';
+                }
+            } else {
+                html.classList.add('light-mode');
+                currentTheme = 'light';
+                if (icon) {
+                    icon.className = 'fas fa-sun text-lg';
+                }
+            }
+            localStorage.setItem('seeraTheme', currentTheme);
+        }
+
+        // ========== LANGUAGE TOGGLE ==========
+        function toggleLanguage() {
+            const langBtn = document.getElementById('langToggle');
+            if (currentLang === 'ar') {
+                currentLang = 'en';
+                langBtn.textContent = 'AR';
+                document.documentElement.lang = 'en';
+                document.documentElement.dir = 'ltr';
+                // Change font for English
+                document.body.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+            } else {
+                currentLang = 'ar';
+                langBtn.textContent = 'EN';
+                document.documentElement.lang = 'ar';
+                document.documentElement.dir = 'rtl';
+                document.body.style.fontFamily = "'Tajawal', sans-serif";
+            }
+            localStorage.setItem('seeraLang', currentLang);
+            applyTranslations();
+        }
+
+        // ========== APPLY TRANSLATIONS ==========
+        function applyTranslations() {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+            // Update title attribute for toggle buttons
+            const themeBtn = document.getElementById('themeToggle');
+            const langBtn = document.getElementById('langToggle');
+            if (themeBtn) themeBtn.title = translations[currentLang]['theme.title'] || 'Toggle theme';
+            if (langBtn) langBtn.title = translations[currentLang]['lang.title'] || 'Toggle language';
+        }
+
+        // ========== INIT ==========
+        (function init() {
+            // Restore theme
+            if (currentTheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+                const icon = document.querySelector('#themeToggle i');
+                if (icon) icon.className = 'fas fa-sun text-lg';
+            }
+            // Restore language
+            const langBtn = document.getElementById('langToggle');
+            if (currentLang === 'en') {
+                langBtn.textContent = 'AR';
+                document.documentElement.lang = 'en';
+                document.documentElement.dir = 'ltr';
+                document.body.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+            }
+            applyTranslations();
+        })();
+    </script>
+    </body>
+</html>
